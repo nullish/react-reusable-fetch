@@ -4,9 +4,20 @@ import { StyleSheet, Text, View } from "react-native";
 
 import useApiRequest from "./hooks/useApiRequest";
 
+const config = {
+  headers: {
+    /* Place heders here E.g.
+    accessKey:
+      "veryLongAPIkey",
+    */
+    "Content-Type": "application/json",
+  }
+};
+
 export default function App() {
   const { data, error, isLoaded } = useApiRequest(
-    "https://api.dictionaryapi.dev/api/v2/entries/en/plinth"
+    "https://api.dictionaryapi.dev/api/v2/entries/en/plinth",
+    config
   );
   console.log(data);
   if (error !== null) {
@@ -44,6 +55,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   header: {
-    fontSize: "xx-large",
+    fontSize: 24,
   },
 });

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"; 
 import axios from 'axios';
 
-const useApiRequest = url => {
+const useApiRequest = (url, config) => {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ const useApiRequest = url => {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get(url)
+        .get(url, config)
         .then(response => {
           setIsLoaded(true);
           setData(response.data);
