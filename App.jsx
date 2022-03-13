@@ -6,7 +6,7 @@ import useApiRequest from "./hooks/useApiRequest";
 
 const config = {
   headers: {
-    /* Place heders here E.g.
+    /* Place headers here E.g.
     accessKey:
       "veryLongAPIkey",
     */
